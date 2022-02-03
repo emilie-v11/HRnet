@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import './Nav.css';
 
 const Nav = () => {
     return (
@@ -7,7 +8,7 @@ const Nav = () => {
             <li>
                 <NavLink
                     className={navData =>
-                        navData.isActive ? 'active nav-link text-decoration' : 'nav-link'
+                        navData.isActive ? 'active nav-link' : 'nav-link'
                     }
                     to="/"
                 >
