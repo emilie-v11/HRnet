@@ -1,0 +1,20 @@
+header {
+    background-color: #5a6f07;
+    background-color: #fff;
+    color: #5a6f07;
+    box-shadow: #cfcfcf 0px 3px 5px 0px;
+}
+
+.logo {
+    width: 6rem;
+    height: auto;
+}
+
+.nav-link,
+.nav-link:hover {
+    color: #5a6f07 !important;
+}
+
+.active {
+    text-decoration: underline;
+}
