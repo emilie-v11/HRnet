@@ -5,10 +5,12 @@ const initialState = {
 };
 
 export default function employees(state = initialState, action) {
-    switch (action.type) {
+    const { type, payload } = action;
+
+    switch (type) {
         case ADD_NEW_EMPLOYEE:
             return {
-                employees: [...state.employees, action.payload],
+                employees: [...state.employees, payload],
             };
         default:
             return state;
