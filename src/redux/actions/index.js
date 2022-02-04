@@ -1,7 +1,7 @@
 import { addEmployee } from './addEmployee.js';
 
-const Actions = {
+const employeeActions = {
     addEmployee,
 };
 
-export default Actions;
+export default employeeActions;
