@@ -32,6 +32,7 @@ const DataTableEmployee = () => {
         const data = [
             employee.lastName,
             employee.firstName,
+            // employee.BirthDate, //TODO
             employee.dateOfBirth, //TODO
             employee.department,
             employee.startDate,
