@@ -1,14 +1,12 @@
 import React from 'react';
+import DataTableEmployee from '../../components/DataTableEmployee/DataTableEmployee';
 import './EmployeeListPage.css';
-// import { NavLink } from 'react-router-dom';
 
 const EmployeeListPage = () => {
     return (
-        <main className="text-center my-5">
-            <h2>Current Employees</h2>
-            {/* <NavLink className="nav-item" to="/">
-                Home
-            </NavLink> */}
+        <main className="text-center py-5">
+            <h2 className="mb-5 text-light">Current Employees</h2>
+            <DataTableEmployee />
         </main>
     );
 };
