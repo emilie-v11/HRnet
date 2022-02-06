@@ -8,12 +8,12 @@ const DataTableEmployee = () => {
         'Last Name',
         'First Name',
         'Date of Birth',
-        'Department',
-        'Start Date',
         'Street',
         'City',
         'State',
         'Zip Code',
+        'Department',
+        'Start Date',
     ];
 
     const options = {
@@ -22,8 +22,10 @@ const DataTableEmployee = () => {
         download: false,
         selectableRowsHideCheckboxes: true,
         selectableRowsHeader: false,
+        // selectableRowsHeader: true,
         print: false,
-        viewColumns: false,
+        // viewColumns: false,
+        viewColumns: true,
     };
 
     const employees = useSelector(state => state.employees.employees);
@@ -32,14 +34,14 @@ const DataTableEmployee = () => {
         const data = [
             employee.lastName,
             employee.firstName,
-            // employee.BirthDate, //TODO
-            employee.dateOfBirth, //TODO
-            employee.department,
-            employee.startDate,
+            // employee.dateOfBirth.split('-').reverse().join('-'),
+            employee.dateOfBirth,
             employee.street,
             employee.city,
             employee.stateName,
             employee.zipCode,
+            employee.department,
+            employee.startDate,
         ];
         employeesArray.push(data);
     });
@@ -50,6 +52,7 @@ const DataTableEmployee = () => {
         <MUIDataTable
             id="MUIDataTable"
             className="container"
+            // className={className}
             data={data}
             columns={columns}
             options={options}

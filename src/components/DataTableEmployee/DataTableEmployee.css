@@ -5,3 +5,8 @@ button.MUIDataTableHeadCell-toolButton-55 {
 span.MuiButton-label {
     font-weight: bold;
 }
+
+/* .MuiSelect-selectMenu.MuiInputBase-input  */
+.MuiSelect-root.MuiSelect-select.MuiSelect-selectMenu.MuiInputBase-input.MuiInput-input {
+    padding: 18px 7px 8px;
+}
