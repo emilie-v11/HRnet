@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import FormCreateEmployee from '../../components/FormCreateEmployee/FormCreateEmployee';
+import FormCreateEmployee from '../../components/Form/FormCreateEmployee';
 import './HomePage.css';
 
 const HomePage = () => {

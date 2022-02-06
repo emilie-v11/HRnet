@@ -1,0 +1,35 @@
+#form-container.form-container {
+    max-width: 500px;
+
+    margin: 0 auto;
+}
+
+#create-employee {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 8%;
+    margin: 15px auto;
+    width: 100%;
+}
+
+label {
+    display: block;
+    margin-top: 0.5rem;
+    margin-bottom: 0.4rem;
+    text-align: left;
+    font-weight: bold;
+}
+input,
+select {
+    width: 100% !important;
+    border: #c4c4c4 1px solid;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.submit-btn {
+    background-color: #93ad19;
+    border: #93ad19;
+}

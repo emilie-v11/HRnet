@@ -1,5 +1,5 @@
 import React from 'react';
-import DataTableEmployee from '../../components/DataTableEmployee/DataTableEmployee';
+import DataTableEmployee from '../../components/DataTable/DataTableEmployee';
 import './EmployeeListPage.css';
 
 const EmployeeListPage = () => {

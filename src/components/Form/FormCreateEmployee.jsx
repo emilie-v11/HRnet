@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import SelectForm from '../SelectForm/SelectForm.jsx';
+import SelectMenu from '../SelectMenu/SelectMenu.jsx';
 import PropTypes from 'prop-types';
 import './FormCreateEmployee.css';
 import employeeActions from '../../redux/actions/index.js';
@@ -74,29 +74,13 @@ const FormCreateEmployee = props => {
     };
 
     return (
-        <div className="container">
-            <form action="#" id="create-employee">
-                {/* <div>
-                    <label htmlFor="birthday">Happy birthday</label>
-                    <input
-                        type="date"
-                        name="birthday"
-                        id="birthday"
-                        onBlur={e => inputHandleChange(e, setBirthday)}
-                        // onChange={date => handleDateFormat(date)}
-                    />
-                </div> */}
-                <div>
-                    <label htmlFor="first-name">First Name</label>
-                    <input
-                        type="text"
-                        name="first-name"
-                        id="first-name"
-                        onBlur={e => inputHandleChange(e, setFirstName)}
-                    />
-                </div>
-
-                <div>
+        <div
+            id="form-container"
+            className="form-container bg-light rounded-3
+        form"
+        >
+            <form action="#" id="create-employee" className="container">
+                <div className="col w-100">
                     <label htmlFor="last-name">Last Name</label>
                     <input
                         type="text"
@@ -106,47 +90,29 @@ const FormCreateEmployee = props => {
                     />
                 </div>
 
-                <div>
+                <div className="col w-100">
+                    <label htmlFor="first-name">First Name</label>
+                    <input
+                        type="text"
+                        name="first-name"
+                        id="first-name"
+                        onBlur={e => inputHandleChange(e, setFirstName)}
+                    />
+                </div>
+
+                <div className="col w-100">
                     <DatePicker
                         label="Date of Birth"
                         inputName="dateOfBirth"
                         idHtmlFor="date-of-birth"
                         onBlur={e => inputHandleChange(e, setDateOfBirth)}
                     />
-                    {/* <label htmlFor="Date of Birth">Start Date</label>
-                    <input
-                        type="date"
-                        name="dateOfBirth"
-                        id="Date of Birth"
-                        onBlur={e => inputHandleChange(e, setDateOfBirth)}
-                        // onChange={date => handleDateFormat(date)}
-                    /> */}
-                    {/* <DatePicker onChange={e => inputHandleChange(e, setDateOfBirth)} /> */}
                 </div>
 
-                <div>
-                    <DatePicker
-                        label="start-date"
-                        inputName="startDate"
-                        idHtmlFor="start-date"
-                        onBlur={e => inputHandleChange(e, setStartDate)}
-                    />
+                <fieldset className="address w-100">
+                    <legend className="fs-6 text-start">Address</legend>
 
-                    {/* <label htmlFor="start-date">Start Date</label>
-                    <input
-                        type="date"
-                        name="startDate"
-                        id="start-date"
-                        onBlur={e => inputHandleChange(e, setStartDate)}
-                        // onChange={date => handleDateFormat(date)}
-                    /> */}
-                    {/* <DatePicker onChange={e => inputHandleChange(e, setStartDate)} /> */}
-                </div>
-
-                <fieldset className="address">
-                    <legend>Address</legend>
-
-                    <div>
+                    <div className="">
                         <label htmlFor="street">Street</label>
                         <input
                             id="street"
@@ -166,9 +132,9 @@ const FormCreateEmployee = props => {
                         />
                     </div>
 
-                    <div>
-                        <label htmlFor="state">State</label>
-                        <SelectForm
+                    <div className="col w-100">
+                        <SelectMenu
+                            label="State"
                             name="state"
                             data={stateNames}
                             value={stateName}
@@ -187,18 +153,31 @@ const FormCreateEmployee = props => {
                     </div>
                 </fieldset>
 
-                <label htmlFor="department">Department</label>
-                <SelectForm
-                    name="department"
-                    data={departments}
-                    value={department}
-                    onChange={e => inputHandleChange(e, setDepartment)}
-                />
-            </form>
+                <div className="col w-100">
+                    <DatePicker
+                        label="start-date"
+                        inputName="startDate"
+                        idHtmlFor="start-date"
+                        onBlur={e => inputHandleChange(e, setStartDate)}
+                    />
+                </div>
 
-            <button onClick={onSubmit} className="submit-btn">
-                Save
-            </button>
+                <div className="col w-100">
+                    <SelectMenu
+                        label="Department"
+                        name="department"
+                        data={departments}
+                        value={department}
+                        onChange={e => inputHandleChange(e, setDepartment)}
+                    />
+                </div>
+                <button
+                    className="submit-btn m-3 w-100 rounded-3 text-light p-2"
+                    onClick={onSubmit}
+                >
+                    Save
+                </button>
+            </form>
         </div>
     );
 };
