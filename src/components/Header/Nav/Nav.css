@@ -1,6 +1,5 @@
 .nav-link,
 .nav-link:hover {
-    /* color: #93ad19 !important; */
     color: #5a6f07 !important;
     color: #6c757d !important;
 }
@@ -8,5 +7,4 @@
 .active {
     text-decoration: underline solid 3px;
     text-underline-offset: 0.5rem;
-    /* color: #93ad19 !important; */
 }

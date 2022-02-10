@@ -2,10 +2,6 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import './Error404.css';
 
-/**
- * It's displayed when error 404
- * @returns {ReactElement} Error404 component
- */
 const Error404 = () => {
     return (
         <main className="Main-Error404">

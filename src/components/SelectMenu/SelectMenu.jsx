@@ -4,7 +4,9 @@ import PropTypes from 'prop-types';
 const SelectMenu = ({ inputName, idHtmlFor, label, value, onChange, data }) => {
     return (
         <>
-            <label htmlFor={idHtmlFor}>{label}</label>
+            <label className="form-label" htmlFor={idHtmlFor}>
+                {label}
+            </label>
             <select
                 className="form-select"
                 name={inputName}

@@ -1,11 +1,9 @@
 import React, { useState, useRef } from 'react';
 import { useDispatch } from 'react-redux';
-import PropTypes from 'prop-types';
 import './FormCreateEmployee.css';
 import employeeActions from '../../redux/actions/index.js';
 import { departments } from '../../assets/data/departments.js';
 import { states } from '../../assets/data/states.js';
-
 // import DatePicker from '../DatePicker/DatePicker.jsx';
 import SelectMenu from '../SelectMenu/SelectMenu.jsx';
 import Modal from '../../components/Modal/Modal';
@@ -115,8 +113,6 @@ const FormCreateEmployee = () => {
         }
     };
 
-    // const reload = () => window.location.reload();
-
     const handleCloseModal = e => {
         e.preventDefault();
 
@@ -209,6 +205,7 @@ const FormCreateEmployee = () => {
                             id="zip-code"
                             type="number"
                             name="zip-code"
+                            min="0"
                             value={zipCode}
                             onChange={e => handleChangeInput(e, setZipCode)}
                         />
@@ -242,23 +239,18 @@ const FormCreateEmployee = () => {
                         <p className="m-0">
                             Caution! <br />
                             One or more fields in the form are empty. <br />
-                            {/* Please fill in all the fields! */}
                         </p>
                     </div>
                 )}
                 <div className=" btn-group w-100" role="group">
-                    {/* className="d-flex flex-row w-100 justify-content-center gx-3"*/}
                     <button
                         className="submit-btn btn btn-secondary w-50 my-4 me-2 rounded-3"
-                        // className="submit-btn btn d-inline flex-fill p-2 my-4 me-2 rounded-3 btn btn-secondary"
                         onClick={handleSubmitForm}
                     >
                         Save
                     </button>
                     <button
                         className="reset-btn btn btn-light text-dark w-50 my-4 ms-2 rounded-3"
-                        // className="reset-btn btn d-inline flex-fill p-2 my-4 ms-2 rounded-3 btn btn-light text-secondary"
-                        // onClick={reload}
                         onClick={initialStates}
                     >
                         Reset

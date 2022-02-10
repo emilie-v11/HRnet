@@ -80,15 +80,12 @@ const DataTableEmployee = () => {
     ];
 
     const options = {
-        // filter: false,
         filter: true,
         download: false,
         selectableRowsHideCheckboxes: true,
-        // selectableRowsHeader: false,
-        selectableRowsHeader: true,
+        selectableRowsHeader: true, // false
         print: false,
-        viewColumns: false,
-        // viewColumns: true,
+        viewColumns: false, // true
         onRowsDelete: true,
     };
 
@@ -98,7 +95,6 @@ const DataTableEmployee = () => {
         const data = [
             employee.lastName,
             employee.firstName,
-            // employee.dateOfBirth.split('-').reverse().join('-'),
             employee.dateOfBirth,
             employee.street,
             employee.city,
