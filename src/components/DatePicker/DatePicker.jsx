@@ -7,12 +7,11 @@ const DatePicker = ({ label, inputName, idHtmlFor, onBlur, onChange }) => {
             <label htmlFor={idHtmlFor}>{label}</label>
             <input
                 type="date"
+                // required
                 name={inputName}
                 id={idHtmlFor}
                 onBlur={onBlur}
                 onChange={onChange}
-                //   onBlur={e => fillForm(e, setDateOfBirth)}
-                // onChange={date => handleDateFormat(date)}
             />
         </>
     );

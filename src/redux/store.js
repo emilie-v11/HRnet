@@ -19,4 +19,8 @@ const persistor = persistStore(store);
 
 export { persistor, store };
 
+// const middleware = [thunk];
+
+// const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(...middleware)));
+
 // export default store;

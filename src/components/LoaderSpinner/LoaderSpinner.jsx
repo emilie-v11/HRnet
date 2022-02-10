@@ -1,11 +1,11 @@
 import React from 'react';
-import './Loader.css';
+import './LoaderSpinner.css';
 
 /**
  * It's show when data aren't ready to display
  * @returns {ReactElement} Loader component when data aren't ready to display
  */
-const Loader = () => {
+const LoaderSpinner = () => {
     return (
         <div className="Loader-Overlay">
             <p>Chargement ...</p>
@@ -25,4 +25,4 @@ const Loader = () => {
     );
 };
 
-export default Loader;
+export default LoaderSpinner;

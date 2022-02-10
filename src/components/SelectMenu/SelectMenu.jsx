@@ -1,11 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const SelectMenu = ({ name, label, value, onChange, data }) => {
+const SelectMenu = ({ inputName, idHtmlFor, label, value, onChange, data }) => {
     return (
         <>
-            <label htmlFor={name}>{label}</label>
-            <select name={name} id={name} value={value} onChange={onChange}>
+            <label htmlFor={idHtmlFor}>{label}</label>
+            <select
+                className="form-select"
+                name={inputName}
+                id={idHtmlFor}
+                value={value}
+                onChange={onChange}
+            >
+                <option value={''}></option>
                 {data.map((data, index) => (
                     <option key={index} value={data}>
                         {data}
@@ -17,7 +24,8 @@ const SelectMenu = ({ name, label, value, onChange, data }) => {
 };
 
 SelectMenu.propTypes = {
-    name: PropTypes.string.isRequired,
+    inputName: PropTypes.string.isRequired,
+    idHtmlFor: PropTypes.string.isRequired,
     label: PropTypes.string.isRequired,
     value: PropTypes.string.isRequired,
     onChange: PropTypes.func.isRequired,

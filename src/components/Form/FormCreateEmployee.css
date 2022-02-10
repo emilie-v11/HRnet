@@ -1,7 +1,7 @@
 #form-container.form-container {
     max-width: 500px;
-
     margin: 0 auto;
+    background-color: #fff;
 }
 
 #create-employee {
@@ -9,15 +9,15 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 8%;
+    padding: 5% 8%;
     margin: 15px auto;
     width: 100%;
 }
 
 label {
     display: block;
-    margin-top: 0.5rem;
-    margin-bottom: 0.4rem;
+    margin-top: 0.8rem;
+    margin-bottom: 0.2rem;
     text-align: left;
     font-weight: bold;
 }
@@ -26,10 +26,11 @@ select {
     width: 100% !important;
     border: #c4c4c4 1px solid;
     border-radius: 5px;
-    padding: 5px;
+    padding: 5px 15px;
+    height: 36.2px;
 }
 
-.submit-btn {
-    background-color: #93ad19;
-    border: #93ad19;
+.submit-btn,
+.reset-btn {
+    box-shadow: #cfcfcf 0px 3px 5px 0px;
 }
