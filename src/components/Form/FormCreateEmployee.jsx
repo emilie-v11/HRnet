@@ -46,7 +46,30 @@ const FormCreateEmployee = () => {
         dateFormatted(newFormat.join('-'));
     };
 
-    function initialStates(e) {
+    const stateNames = [];
+    const stateAbbreviations = [];
+    states.forEach(state => {
+        stateNames.push(state.name);
+        stateAbbreviations.push(state.abbreviation);
+    });
+
+    const stateAbbreviation = stateAbbreviations[stateNames.indexOf(state)];
+    console.log(state);
+    console.log(stateAbbreviation);
+
+    const handleChangeInput = (e, inputName) => {
+        inputName(e.target.value);
+    };
+
+    const capitalize = str => {
+        return str.trim().charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+    };
+
+    const isFilled = input => {
+        return input.length > 0;
+    };
+
+    const initialStates = e => {
         e.preventDefault();
 
         setFirstName('');
@@ -62,23 +85,14 @@ const FormCreateEmployee = () => {
         setDepartment('');
 
         setErrorMessage(false);
-    }
-
-    const stateNames = [];
-    states.forEach(state => {
-        stateNames.push(state.name);
-    });
-
-    const handleChangeInput = (e, inputName) => {
-        inputName(e.target.value);
     };
 
-    const capitalize = str => {
-        return str.trim().charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+    const handleCloseModal = () => {
+        setModalOpen(false);
     };
 
-    const isFilled = input => {
-        return input.length > 0;
+    const handleOpenModal = () => {
+        setModalOpen(true);
     };
 
     const handleSubmitForm = e => {
@@ -96,28 +110,25 @@ const FormCreateEmployee = () => {
         ) {
             dispatch(
                 employeeActions.addEmployee({
-                    firstName: capitalize(firstName),
                     lastName: capitalize(lastName),
+                    firstName: capitalize(firstName),
                     dateOfBirth,
                     street: capitalize(street),
                     city: capitalize(city),
-                    state,
+                    // state,
+                    stateAbbreviation,
                     zipCode,
                     startDate,
                     department,
                 })
             );
-            setModalOpen(true);
+            // successValidation(e);
+            // setModalOpen(true);
+            handleOpenModal();
+            initialStates(e);
         } else {
             setErrorMessage(true);
         }
-    };
-
-    const handleCloseModal = e => {
-        e.preventDefault();
-
-        initialStates(e);
-        setModalOpen(false);
     };
 
     return (
@@ -190,9 +201,9 @@ const FormCreateEmployee = () => {
 
                     <div className="col w-100">
                         <SelectMenu
+                            label="State"
                             inputName="state"
                             idHtmlFor="state"
-                            label="State"
                             data={stateNames}
                             value={state}
                             onChange={e => handleChangeInput(e, setState)}

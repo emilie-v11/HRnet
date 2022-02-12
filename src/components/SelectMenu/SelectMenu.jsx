@@ -14,7 +14,7 @@ const SelectMenu = ({ inputName, idHtmlFor, label, value, onChange, data }) => {
                 value={value}
                 onChange={onChange}
             >
-                <option value={''}></option>
+                <option value={''}>Select ...</option>
                 {data.map((data, index) => (
                     <option key={index} value={data}>
                         {data}
@@ -31,6 +31,7 @@ SelectMenu.propTypes = {
     label: PropTypes.string.isRequired,
     value: PropTypes.string.isRequired,
     onChange: PropTypes.func.isRequired,
+    data: PropTypes.array.isRequired,
 };
 
 export default SelectMenu;
