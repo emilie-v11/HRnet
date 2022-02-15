@@ -29,6 +29,32 @@ const FormCreateEmployee = () => {
     const [errorMessage, setErrorMessage] = useState(false);
     const [isModalOpen, setModalOpen] = useState(false);
 
+    // const stateNames = [];
+    // const statevalue = [];
+    // states.forEach(state => {
+    //     stateNames.push(state.name);
+    //     statevalue.push(state.value);
+    // });
+
+    // const stateAbbreviation = statevalue[stateNames.indexOf(state)];
+    // console.log(state);
+    // console.log(stateAbbreviation);
+
+    const formattedStatesArray = states.map(state => {
+        return {
+            label: state.name,
+            value: state.abbreviation,
+        };
+    });
+
+    // const formattedStatesArray = states.map(({ name: label, abbreviation: value, ...rest }) => ({
+    //     label,
+    //     value,
+    //     ...rest,
+    // }));
+
+    console.log(formattedStatesArray);
+
     // => French date formatted with simple input type 'date'
     // const handleDateFormat = date => {
     //     return date.split('-').reverse().join('-');
@@ -36,26 +62,13 @@ const FormCreateEmployee = () => {
 
     const handleDateFormat = (date, dateFormatted, dateInput) => {
         // const dateString = date.toLocaleString('en-US').split(',').shift();
-
         const dateWithoutTime = date.toLocaleString('en-GB').split(',').shift();
         dateInput(date);
         const newFormat = dateWithoutTime.split('/');
-
         // if date.toLocaleString('en-US') next 2 lines are not necessary
         [newFormat[0], newFormat[1]] = [newFormat[1], newFormat[0]];
         dateFormatted(newFormat.join('-'));
     };
-
-    const stateNames = [];
-    const stateAbbreviations = [];
-    states.forEach(state => {
-        stateNames.push(state.name);
-        stateAbbreviations.push(state.abbreviation);
-    });
-
-    const stateAbbreviation = stateAbbreviations[stateNames.indexOf(state)];
-    console.log(state);
-    console.log(stateAbbreviation);
 
     const handleChangeInput = (e, inputName) => {
         inputName(e.target.value);
@@ -115,28 +128,23 @@ const FormCreateEmployee = () => {
                     dateOfBirth,
                     street: capitalize(street),
                     city: capitalize(city),
-                    // state,
-                    stateAbbreviation,
+                    state,
+                    // stateAbbreviation,
                     zipCode,
                     startDate,
                     department,
                 })
             );
-            // successValidation(e);
-            // setModalOpen(true);
             handleOpenModal();
             initialStates(e);
         } else {
             setErrorMessage(true);
         }
     };
+    console.log(state);
 
     return (
-        <div
-            id="form-container"
-            className="form-container rounded-3
-        form"
-        >
+        <div id="form-container" className="form-container rounded-3 form">
             <form action="#" id="create-employee" className="container" ref={form}>
                 <div className="col w-100">
                     <label htmlFor="last-name">Last Name</label>
@@ -204,7 +212,9 @@ const FormCreateEmployee = () => {
                             label="State"
                             inputName="state"
                             idHtmlFor="state"
-                            data={stateNames}
+                            // data={stateNames}
+                            // data={states}
+                            data={formattedStatesArray}
                             value={state}
                             onChange={e => handleChangeInput(e, setState)}
                         />

@@ -15,11 +15,24 @@ const SelectMenu = ({ inputName, idHtmlFor, label, value, onChange, data }) => {
                 onChange={onChange}
             >
                 <option value={''}>Select ...</option>
-                {data.map((data, index) => (
+
+                {/* {data.map((data, index) => (
                     <option key={index} value={data}>
                         {data}
                     </option>
-                ))}
+                ))} */}
+
+                {typeof data[0] === 'object'
+                    ? data.map((item, index) => (
+                          <option key={index} value={item.value}>
+                              {item.label}
+                          </option>
+                      ))
+                    : data.map((item, index) => (
+                          <option key={index} value={item}>
+                              {item}
+                          </option>
+                      ))}
             </select>
         </>
     );
