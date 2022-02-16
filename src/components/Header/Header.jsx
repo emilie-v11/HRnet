@@ -1,13 +1,17 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import Nav from './Nav/Nav';
-import './Header.css';
 import logo from '../../assets/img/logo.webp';
+import './Header.css';
 
 const Header = () => {
     return (
-        <header className="px-4 py-2 position-relative">
-            <div className="container-xxl d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-                <h1 className="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-decoration-none">
+        <header className="px-4 py-3 position-relative">
+            <div className="container-xxl d-flex flex-wrap align-items-center justify-content-center justify-content-around justify-content-lg-start">
+                <NavLink
+                    className="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-decoration-none"
+                    to="/"
+                >
                     <img
                         className="logo"
                         src={logo}
@@ -15,8 +19,8 @@ const Header = () => {
                         width="6rem"
                         height="5rem"
                     />
-                    HRnet
-                </h1>
+                    <h1 className="">HRnet</h1>
+                </NavLink>
                 <Nav />
             </div>
         </header>
