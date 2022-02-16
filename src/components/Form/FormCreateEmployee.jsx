@@ -29,21 +29,10 @@ const FormCreateEmployee = () => {
     const [errorMessage, setErrorMessage] = useState(false);
     const [isModalOpen, setModalOpen] = useState(false);
 
-    // const stateNames = [];
-    // const statevalue = [];
-    // states.forEach(state => {
-    //     stateNames.push(state.name);
-    //     statevalue.push(state.value);
-    // });
-
-    // const stateAbbreviation = statevalue[stateNames.indexOf(state)];
-    // console.log(state);
-    // console.log(stateAbbreviation);
-
     const formattedStatesArray = states.map(state => {
         return {
-            label: state.name,
-            value: state.abbreviation,
+            optionLabel: state.name,
+            optionValue: state.abbreviation,
         };
     });
 
@@ -142,6 +131,7 @@ const FormCreateEmployee = () => {
         }
     };
     console.log(state);
+    console.log(department);
 
     return (
         <div id="form-container" className="form-container rounded-3 form">
@@ -210,8 +200,9 @@ const FormCreateEmployee = () => {
                     <div className="col w-100">
                         <SelectMenu
                             label="State"
-                            inputName="state"
                             idHtmlFor="state"
+                            inputName="state"
+                            selectText="Select..."
                             // data={stateNames}
                             // data={states}
                             data={formattedStatesArray}
@@ -246,9 +237,10 @@ const FormCreateEmployee = () => {
 
                 <div className="col w-100">
                     <SelectMenu
-                        inputName="department"
-                        idHtmlFor="department"
                         label="Department"
+                        idHtmlFor="department"
+                        inputName="department"
+                        selectText="Select..."
                         data={departments}
                         value={department}
                         onChange={e => handleChangeInput(e, setDepartment)}

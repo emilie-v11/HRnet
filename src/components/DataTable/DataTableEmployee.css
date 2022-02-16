@@ -2,8 +2,9 @@ button.MUIDataTableHeadCell-toolButton-55 {
     margin-right: 0;
 }
 
-span.MuiButton-label {
-    font-weight: bold;
+span.MuiButton-label,
+.MuiTableCell-head {
+    font-weight: bold !important;
 }
 
 .MuiSelect-root.MuiSelect-select.MuiSelect-selectMenu.MuiInputBase-input.MuiInput-input {

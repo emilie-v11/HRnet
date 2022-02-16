@@ -1,50 +1,31 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Label, Select } from 'select-react-bootstrap';
 
-const SelectMenu = ({ inputName, idHtmlFor, label, value, onChange, data }) => {
+const SelectMenu = ({ label, idHtmlFor, inputName, selectText, data, value, onChange }) => {
     return (
         <>
-            <label className="form-label" htmlFor={idHtmlFor}>
-                {label}
-            </label>
-            <select
-                className="form-select"
+            <Label label={label} htmlFor={idHtmlFor} />
+            <Select
                 name={inputName}
                 id={idHtmlFor}
+                selectText={selectText}
+                data={data}
                 value={value}
                 onChange={onChange}
-            >
-                <option value={''}>Select ...</option>
-
-                {/* {data.map((data, index) => (
-                    <option key={index} value={data}>
-                        {data}
-                    </option>
-                ))} */}
-
-                {typeof data[0] === 'object'
-                    ? data.map((item, index) => (
-                          <option key={index} value={item.value}>
-                              {item.label}
-                          </option>
-                      ))
-                    : data.map((item, index) => (
-                          <option key={index} value={item}>
-                              {item}
-                          </option>
-                      ))}
-            </select>
+            />
         </>
     );
 };
 
 SelectMenu.propTypes = {
-    inputName: PropTypes.string.isRequired,
-    idHtmlFor: PropTypes.string.isRequired,
     label: PropTypes.string.isRequired,
+    idHtmlFor: PropTypes.string.isRequired,
+    inputName: PropTypes.string.isRequired,
+    selectText: PropTypes.string,
+    data: PropTypes.array.isRequired,
     value: PropTypes.string.isRequired,
     onChange: PropTypes.func.isRequired,
-    data: PropTypes.array.isRequired,
 };
 
 export default SelectMenu;
