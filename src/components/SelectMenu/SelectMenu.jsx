@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Label, Select } from 'select-react-bootstrap';
+import { Label } from 'select-react-bootstrap/dist/index.js';
+import { Select } from 'select-react-bootstrap/dist/index.js';
 
 const SelectMenu = ({ label, idHtmlFor, inputName, selectText, data, value, onChange }) => {
     return (

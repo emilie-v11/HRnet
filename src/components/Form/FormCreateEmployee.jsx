@@ -4,11 +4,9 @@ import './FormCreateEmployee.css';
 import employeeActions from '../../redux/actions/index.js';
 import { departments } from '../../assets/data/departments.js';
 import { states } from '../../assets/data/states.js';
-// import DatePicker from '../DatePicker/DatePicker.jsx';
 import SelectMenu from '../SelectMenu/SelectMenu.jsx';
 import Modal from '../../components/Modal/Modal';
-import DatePicker from 'react-datepicker';
-import 'react-datepicker/dist/react-datepicker.css';
+import DatePickerReact from '../DatePicker/DatePicker';
 
 const FormCreateEmployee = () => {
     const dispatch = useDispatch();
@@ -41,8 +39,6 @@ const FormCreateEmployee = () => {
     //     value,
     //     ...rest,
     // }));
-
-    console.log(formattedStatesArray);
 
     // => French date formatted with simple input type 'date'
     // const handleDateFormat = date => {
@@ -118,7 +114,6 @@ const FormCreateEmployee = () => {
                     street: capitalize(street),
                     city: capitalize(city),
                     state,
-                    // stateAbbreviation,
                     zipCode,
                     startDate,
                     department,
@@ -130,8 +125,6 @@ const FormCreateEmployee = () => {
             setErrorMessage(true);
         }
     };
-    console.log(state);
-    console.log(department);
 
     return (
         <div id="form-container" className="form-container rounded-3 form">
@@ -159,8 +152,9 @@ const FormCreateEmployee = () => {
                 </div>
 
                 <div className="col w-100">
-                    <label htmlFor="date-of-birth">Date of Birth</label>
-                    <DatePicker
+                    <DatePickerReact
+                        label="Date of Birth"
+                        idHtmlFor="date-of-birth"
                         placeholderText="mm/dd/yyyy"
                         dateFormat="MM/dd/yyyy"
                         onChange={date => handleDateFormat(date, setDateOfBirth, setInitialDob)}
@@ -203,8 +197,6 @@ const FormCreateEmployee = () => {
                             idHtmlFor="state"
                             inputName="state"
                             selectText="Select..."
-                            // data={stateNames}
-                            // data={states}
                             data={formattedStatesArray}
                             value={state}
                             onChange={e => handleChangeInput(e, setState)}
@@ -225,11 +217,11 @@ const FormCreateEmployee = () => {
                 </fieldset>
 
                 <div className="col w-100">
-                    <label htmlFor="start-date">Start date</label>
-                    <DatePicker
+                    <DatePickerReact
+                        label="Start Date"
+                        idHtmlFor="start-date"
                         placeholderText="mm/dd/yyyy"
                         dateFormat="MM/dd/yyyy"
-                        value={startDate}
                         onChange={date => handleDateFormat(date, setStartDate, setInitialStartDate)}
                         selected={initialStartDate}
                     />

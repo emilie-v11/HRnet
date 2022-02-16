@@ -1,28 +1,30 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
 
-const DatePicker = ({ label, inputName, idHtmlFor, onBlur, onChange }) => {
+const DatePickerReact = ({ label, idHtmlFor, placeholderText, dateFormat, onChange, selected }) => {
     return (
         <>
             <label htmlFor={idHtmlFor}>{label}</label>
-            <input
-                type="date"
-                // required
-                name={inputName}
+            <DatePicker
                 id={idHtmlFor}
-                onBlur={onBlur}
+                placeholderText={placeholderText}
+                dateFormat={dateFormat}
                 onChange={onChange}
+                selected={selected}
             />
         </>
     );
 };
 
-DatePicker.protoTypes = {
+DatePickerReact.protoTypes = {
     label: PropTypes.string.isRequired,
-    inputName: PropTypes.string.isRequired,
     idHtmlFor: PropTypes.string.isRequired,
-    onBlur: PropTypes.string,
-    onChange: PropTypes.string,
+    placeholderText: PropTypes.string,
+    dateFormat: PropTypes.string,
+    onChange: PropTypes.func.isRequired,
+    selected: PropTypes.string,
 };
 
-export default DatePicker;
+export default DatePickerReact;
