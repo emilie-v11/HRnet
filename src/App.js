@@ -1,6 +1,5 @@
 import React, { lazy, Suspense } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import './App.css';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import LoaderSpinner from './components/LoaderSpinner/LoaderSpinner';
