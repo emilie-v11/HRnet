@@ -1,70 +1,59 @@
-# Getting Started with Create React App
+# HRnet, OpenClassrooms project #14
+
+HR application allows to add new employee data and display current employees in a data table.
+
+Convert a html/jquery HR app to a react app. These is the React version of the HRnet app.
+The repository of the original project is [here](https://github.com/OpenClassrooms-Student-Center/P12_Front-end).
+
+Convert 4 plugin jquery in React component and publish one of them as a npm package in npm site.
+I chose to convert and publish the Select Menu. The repository of the component is [here](https://github.com/emilie-v11/P14_select-react-bootstrap), and the link to the package on the npm site here. [here](https://www.npmjs.com/package/select-react-bootstrap).
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Prerequisites
 
-In the project directory, you can run:
+-   [npm](https://www.npmjs.com/) v7.24.0
 
-### `yarn start`
+-   [yarn](https://yarnpkg.com/) v1.22.11
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Dependencies
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+-   [React](https://reactjs.org/) v17.0.2
 
-### `yarn test`
+-   [Redux](https://redux.js.org/) v4.1.2
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+-   [react-redux](https://react-redux.js.org/) v7.2.6
 
-### `yarn build`
+-   [react-router-dom](https://reactrouter.com/web/guides/quick-start) v6.2.1
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+-   [redux-thunk](https://github.com/reduxjs/redux-thunk) v2.4.1
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+-   [redux-persist](https://yarnpkg.com/package/redux-persist) v6.0.0
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+-   [prop-types](https://yarnpkg.com/package/prop-types) v15.8.1
 
-### `yarn eject`
+-   [bootstrap](https://yarnpkg.com/package/bootstrap) v5.1.3
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+-   [mui-datatables](https://yarnpkg.com/package/mui-datatables) v3.7.7
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+-   [react-datepicker](https://yarnpkg.com/package/react-datepicker) v4.6.0
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+-   [@material-ui/core](https://yarnpkg.com/package/@material-ui/core) v4.11.4
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+-   [@material-ui/icons](https://yarnpkg.com/package/@material-ui/icons) v4.11.2
 
-## Learn More
+-   [select-react-bootstrap](https://www.npmjs.com/package/select-react-bootstrap) v0.1.5
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Install this project on your local
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+-   Fork this repository
 
-### Code Splitting
+-   Clone to your local on a directory of your choice.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+-   From the terminal, change directory to the cloned project directory.
 
-### Analyzing the Bundle Size
+-   Install with command `yarn install`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+-   Run the project with command `yarn start`
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This application will run on `http://localhost:3000`
