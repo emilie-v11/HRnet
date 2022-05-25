@@ -8,9 +8,15 @@ The repository of the original project is [here](https://github.com/OpenClassroo
 Convert 4 plugin jquery in React component and publish one of them as a npm package in npm site.
 I chose to convert and publish the Select Menu. The repository of the component is [here](https://github.com/emilie-v11/P14_select-react-bootstrap), and the link to the package on the npm site here. [here](https://www.npmjs.com/package/select-react-bootstrap).
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+-   [See my Website](https://eager-wiles-f262a8.netlify.app/) 👋
 
-- [See my Website](https://eager-wiles-f262a8.netlify.app/) 👋
+**Old version of HRnet**
+
+<kbd>![HRnet old version](./HRnet-origin.png)</kbd>
+
+**New version of HRnet**
+
+<kbd>![HRnet new version](./HRnet-newVersion.png)</kbd>
 
 ## Prerequisites
 
