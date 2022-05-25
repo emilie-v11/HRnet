@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import Nav from './Nav/Nav';
-import logo from '../../assets/img/logo.webp';
+// import logo from '../../assets/img/logo.webp';
 import './Header.css';
 
 const Header = () => {
@@ -14,7 +14,8 @@ const Header = () => {
                 >
                     <img
                         className="logo"
-                        src={logo}
+                        // src={logo}
+                        src="https://user.oc-static.com/upload/2020/08/14/15974125765772_image2.jpg"
                         alt="logo Wealth Health"
                         width="6rem"
                         height="5rem"

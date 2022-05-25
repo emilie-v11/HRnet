@@ -27,18 +27,18 @@ const FormCreateEmployee = () => {
     const [errorMessage, setErrorMessage] = useState(false);
     const [isModalOpen, setModalOpen] = useState(false);
 
+    // const formattedStatesArray = states.map(({ name: label, abbreviation: value, ...rest }) => ({
+    //     label,
+    //     value,
+    //     ...rest,
+    // }));
+
     const formattedStatesArray = states.map(state => {
         return {
             optionLabel: state.name,
             optionValue: state.abbreviation,
         };
     });
-
-    // const formattedStatesArray = states.map(({ name: label, abbreviation: value, ...rest }) => ({
-    //     label,
-    //     value,
-    //     ...rest,
-    // }));
 
     // => French date formatted with simple input type 'date'
     // const handleDateFormat = date => {
@@ -261,7 +261,9 @@ const FormCreateEmployee = () => {
                         Reset
                     </button>
                 </div>
-                {isModalOpen && <Modal onClick={handleCloseModal} />}
+                {isModalOpen && (
+                    <Modal onClick={handleCloseModal} message=" New employee created !" />
+                )}
             </form>
         </div>
     );

@@ -1,6 +1,7 @@
 body {
     margin: 0;
     padding: 0;
+    background-color: #5a6f07 !important;
 }
 
 * {
@@ -16,5 +17,5 @@ a:active {
 
 main {
     min-height: 86vh;
-    background-color: #5a6f07 !important;
+    /* background-color: #5a6f07 !important; */
 }

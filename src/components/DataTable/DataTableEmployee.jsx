@@ -83,9 +83,9 @@ const DataTableEmployee = () => {
         filter: true,
         download: false,
         selectableRowsHideCheckboxes: true,
-        selectableRowsHeader: true, // false
+        selectableRowsHeader: true, //
         print: false,
-        viewColumns: false, // true
+        viewColumns: false, //
         onRowsDelete: true,
     };
 
@@ -99,7 +99,6 @@ const DataTableEmployee = () => {
             employee.street,
             employee.city,
             employee.state,
-            // employee.stateAbbreviation,
             employee.zipCode,
             employee.department,
             employee.startDate,
